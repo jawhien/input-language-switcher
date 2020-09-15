@@ -6,7 +6,7 @@ import ctypes
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@script(description="Switch input language", gesture="kb:windows+space")
-	def script_reportMouseObject(self, gesture):
+	def script_langSwitch(self, gesture):
 		user32 = ctypes.windll.user32
 
 		hnd=user32.GetForegroundWindow()
