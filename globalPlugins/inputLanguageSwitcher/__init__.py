@@ -2,6 +2,7 @@
 from scriptHandler import script
 import globalPluginHandler
 import ctypes
+import api
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
@@ -9,5 +10,5 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_langSwitch(self, gesture):
 		user32 = ctypes.windll.user32
 
-		hnd=user32.GetForegroundWindow()
+		hnd=api.getFocusObject().windowHandle
 		user32.PostMessageA(hnd, 0x0050, 2, 0)
